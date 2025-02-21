@@ -23,3 +23,16 @@ module.exports = {
      */
   }
 };
+
+module.exports = {
+  async up(queryInterface) {
+    await queryInterface.bulkInsert('Departments', [
+      { name: 'Engineering', createdAt: new Date(), updatedAt: new Date() },
+      { name: 'HR', createdAt: new Date(), updatedAt: new Date() },
+    ]);
+  },
+  async down(queryInterface) {
+    await queryInterface.bulkDelete('Departments', null, {});
+  }
+};
+
